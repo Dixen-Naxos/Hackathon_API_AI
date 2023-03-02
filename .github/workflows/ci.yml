@@ -24,7 +24,7 @@ jobs:
         run: docker build . --file Dockerfile --tag ${{env.DOCKER_USER}}/hackathon-ai-api:latest
 
       - name: Docker push
-        run: docker push ${{env.DOCKER_USER}}/hackathon:latest
+        run: docker push ${{env.DOCKER_USER}}/hackathon-ai-api:latest
 
       - name: Redeploy
         uses: appleboy/ssh-action@master
@@ -38,4 +38,3 @@ jobs:
             docker compose pull 
             docker compose up -d
             docker image prune -f
-            
