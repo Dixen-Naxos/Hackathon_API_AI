@@ -1,18 +1,16 @@
 import io
-import os
 
 from fastapi import FastAPI, UploadFile
 import tensorflow as tf
 from PIL import Image
 import numpy as np
-import urllib.request
 
 IMG_SIZE = (64, 64)
-model = tf.keras.models.load_model("models/model_loss_0.41599953174591064_acc_0.8107670545578003.h5")
+model = tf.keras.models.load_model("../models/model_loss_0.9023550748825073_acc_0.6666666865348816.h5")
 
 app = FastAPI()
 
-RESULTS = ["Non-recyclable", "Recyclable"]
+RESULTS = ["black", "blue", "green", "yellow"]
 
 
 def imageThroughIA(image: Image) -> str:
