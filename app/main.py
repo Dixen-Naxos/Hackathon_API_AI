@@ -6,7 +6,7 @@ from PIL import Image
 import numpy as np
 
 IMG_SIZE = (64, 64)
-model = tf.keras.models.load_model("../models/model_loss_0.9023550748825073_acc_0.6666666865348816.h5")
+model = tf.keras.models.load_model("models/model_loss_0.882523775100708_acc_0.6944937705993652.h5")
 
 app = FastAPI()
 
