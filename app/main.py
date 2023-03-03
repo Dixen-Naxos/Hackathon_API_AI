@@ -27,6 +27,6 @@ async def root():
 @app.post("/check-recyclable")
 async def checkRecyclable(file: UploadFile):
     request_object_content = await file.read()
-    img = Image.open(io.BytesIO(request_object_content)).resize(IMG_SIZE)
+    img = Image.open(io.BytesIO(request_object_content)).convert('RGB').resize(IMG_SIZE)
     res = imageThroughIA(img)
     return res
